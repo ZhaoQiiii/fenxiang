@@ -1,7 +1,7 @@
 import gradio as gr
 import random
 
-def random_name():
+def random_name(_):
     names = ["毛鑫", "王艺芸", "赵启", "侯绍伟", "董鉴欣"]
     return random.choice(names)
 
