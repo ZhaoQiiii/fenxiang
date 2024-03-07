@@ -7,7 +7,7 @@ def random_name():
 
 iface = gr.Interface(
     fn=random_name,
-    inputs=gr.inputs.Button(label="Random"),
+    inputs=gr.components.Button(label="Random"),
     outputs="text",
     title="Random Name Selector",
     description="Click 'Random' to select a name randomly from the list."
