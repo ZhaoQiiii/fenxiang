@@ -7,15 +7,11 @@ def random_name():
 
 iface = gr.Interface(
     fn=random_name,
-    inputs=None,  # 不需要输入
+    inputs=[],  # 空输入列表
     outputs="text",
     title="Random Name Selector",
-    description="Click 'Random' to select a name randomly from the list.",
-    live=True  # 使用 live=True 来自动触发函数执行
+    description="Click 'Submit' to select a name randomly from the list."
 )
-
-# 添加一个按钮，当点击时，触发 random_name 函数
-iface.add_component(gr.components.Button("Random"), "output")
 
 if __name__ == "__main__":
     iface.launch()
