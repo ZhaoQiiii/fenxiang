@@ -5,19 +5,17 @@ def random_name():
     names = ["毛鑫", "王艺芸", "赵启", "侯绍伟", "董鉴欣"]
     return random.choice(names)
 
-# 定义Gradio界面
 iface = gr.Interface(
     fn=random_name,
-    inputs=None,
+    inputs=None,  # 不需要输入
     outputs="text",
     title="Random Name Selector",
     description="Click 'Random' to select a name randomly from the list.",
-    # 添加一个动作按钮，用户点击时触发random_name函数
-    live=False
-).add_component(
-    gr.components.Button("Random"), 
-    "output" # 指定点击按钮后的输出位置
+    live=True  # 使用 live=True 来自动触发函数执行
 )
+
+# 添加一个按钮，当点击时，触发 random_name 函数
+iface.add_component(gr.components.Button("Random"), "output")
 
 if __name__ == "__main__":
     iface.launch()
