@@ -1,16 +1,14 @@
 import gradio as gr
-import random
 
-def random_name():
-    names = ["毛鑫", "王艺芸", "赵启", "侯绍伟", "董鉴欣"]
-    return random.choice(names)
+def test_function():
+    return "Hello, Gradio!"
 
 iface = gr.Interface(
-    fn=random_name,
-    inputs=[],  # 空输入列表
+    fn=test_function,
+    inputs=[],
     outputs="text",
-    title="Random Name Selector",
-    description="Click 'Submit' to select a name randomly from the list."
+    title="Test Interface",
+    description="This is a test to see if Gradio runs correctly."
 )
 
 if __name__ == "__main__":
